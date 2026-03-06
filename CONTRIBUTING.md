@@ -5,6 +5,7 @@ Thank you for your interest in contributing! Please take a moment to review thes
 ## Table of Contents<!-- omit in toc -->
 
 - [Code of Conduct](#code-of-conduct)
+- [Pull Request Checks](#pull-request-checks)
 - [Coding Standards](#coding-standards)
 - [Developer Certificate of Origin](#developer-certificate-of-origin)
 - [AI Use in Development](#ai-use-in-development)
@@ -13,7 +14,7 @@ Thank you for your interest in contributing! Please take a moment to review thes
 
 ## Code of Conduct
 
-This project adheres to a [Code of Conduct](CODE-OF-CONDUCT.md). By participating, you are expected to uphold this standard. Please report unacceptable behavior to the maintainers.
+This project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this standard. Please report unacceptable behavior to the maintainers.
 
 ## Pull Request Checks
 
