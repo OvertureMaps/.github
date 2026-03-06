@@ -47,7 +47,7 @@ Use `[WIP]` as a prefix on repos without draft PR support.
 | `FEATURE` | Adding new functionality |
 | `ENHANCEMENT` | Improving existing functionality |
 | `DOCS` | Documentation-only changes |
-| `REFACTOR` | Code restructuring without behaviour change |
+| `REFACTOR` | Code restructuring without behavior change |
 | `TEST` | Adding or updating tests |
 | `CHORE` | Maintenance, dependency updates, tooling |
 | `PERFORMANCE` | Performance improvements |

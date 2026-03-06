@@ -59,7 +59,7 @@ representative at an online or offline event.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be directly
-reported to the Executive Director or <community@overturemaps.org>.
+reported to <community@overturemaps.org>.
 
 All complaints will be reviewed and investigated promptly and fairly.
 
