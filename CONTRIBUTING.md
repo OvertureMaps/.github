@@ -8,7 +8,6 @@ Thank you for your interest in contributing! Please take a moment to review thes
 - [Pull Request Checks](#pull-request-checks)
 - [Coding Standards](#coding-standards)
 - [Developer Certificate of Origin](#developer-certificate-of-origin)
-- [AI Use in Development](#ai-use-in-development)
 
 ---
 
@@ -30,34 +29,3 @@ All pull requests run a standard set of automated checks covering title format, 
 ## Developer Certificate of Origin
 
 All contributions require a [Developer Certificate of Origin (DCO)](docs/dco-guidelines.md) sign-off. See [pull-request-checks.md](docs/pull-request-checks.md#developer-certificate-of-origin-sign-off) for sign-off instructions.
-
-## AI Use in Development
-
-This section describes our policies around using AI tools when contributing to this project.
-
-### AI-Assisted Development
-
-> **[PLACEHOLDER]** Describe the project's stance on using AI coding assistants (e.g., GitHub Copilot, Cursor, ChatGPT) during development. Address:
->
-> - Which tools are permitted or recommended
-> - Expectations around reviewing and validating AI-generated code
-> - Any licensing or intellectual property considerations
-> - Whether AI use should be disclosed in commits or pull requests
-
-### AI-Generated Issues
-
-> **[PLACEHOLDER]** Describe expectations when AI tools are used to draft or generate issues. Address:
->
-> - Whether AI-generated issues are acceptable and under what conditions
-> - Required human review before submission
-> - How to label or disclose AI-drafted content
-> - Quality standards that must be met regardless of how an issue was created
-
-### AI-Generated Pull Requests
-
-> **[PLACEHOLDER]** Describe the policy for pull requests that are substantially authored by AI agents or assistants. Address:
->
-> - Whether AI-generated pull requests are accepted (e.g., via GitHub Copilot coding agent)
-> - Required human review and accountability standards
-> - How to label or disclose AI-generated contributions
-> - Any additional scrutiny or testing requirements for AI-generated code
