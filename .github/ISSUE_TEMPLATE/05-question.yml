@@ -1,0 +1,27 @@
+name: Question
+description: Ask for clarification or technical guidance.
+title: "[Question] "
+labels:
+  - question
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: Ask a clear, specific question.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Include relevant links, code, or prior discussion.
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgency
+      options:
+        - No deadline
+        - Needed this week
+        - Needed in 1 to 2 days
+        - Blocking now

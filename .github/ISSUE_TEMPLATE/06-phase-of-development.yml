@@ -1,0 +1,33 @@
+name: Phase of development
+description: Track a proposal or initiative by phase.
+title: "[Phase] "
+labels:
+  - phase-tracking
+body:
+  - type: dropdown
+    id: phase
+    attributes:
+      label: Current phase
+      options:
+        - Discovery
+        - Planning
+        - Build
+        - Validation
+        - Rollout
+        - Post-launch
+    validations:
+      required: true
+  - type: textarea
+    id: update
+    attributes:
+      label: Current update
+      description: What is complete, in progress, and next?
+    validations:
+      required: true
+  - type: checkboxes
+    id: platform_reuse
+    attributes:
+      label: Cross-group reuse check
+      description: Mark if this work can be reused by multiple groups.
+      options:
+        - label: This work has cross-group platform value

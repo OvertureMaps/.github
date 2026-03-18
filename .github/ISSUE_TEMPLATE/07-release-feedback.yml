@@ -1,0 +1,32 @@
+name: Release feedback
+description: Capture feedback from a release or milestone.
+title: "[Feedback] "
+labels:
+  - feedback
+body:
+  - type: input
+    id: release
+    attributes:
+      label: Release or milestone
+      placeholder: vYYYY.MM.DD or milestone name
+    validations:
+      required: true
+  - type: textarea
+    id: feedback
+    attributes:
+      label: Feedback
+      description: What worked, what did not, and what should change next.
+    validations:
+      required: true
+  - type: dropdown
+    id: theme
+    attributes:
+      label: Primary theme
+      options:
+        - Reliability
+        - Performance
+        - Usability
+        - Data quality
+        - Process
+        - Documentation
+        - Other

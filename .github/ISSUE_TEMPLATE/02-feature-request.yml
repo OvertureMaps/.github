@@ -1,0 +1,53 @@
+name: Feature request
+description: Propose an improvement or new capability.
+title: "[Feature] "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: What user or operational problem exists today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe what should be built.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Other approaches considered and why they are not preferred.
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - P0 critical
+        - P1 high
+        - P2 normal
+        - P3 low
+    validations:
+      required: true
+  - type: dropdown
+    id: impacted_groups
+    attributes:
+      label: Impacted groups
+      multiple: true
+      options:
+        - Single repository only
+        - Admin
+        - Address
+        - Base
+        - Buildings
+        - Data Platform
+        - Developer Advocacy
+        - Places
+        - Schema
+        - Transportation
+        - Other

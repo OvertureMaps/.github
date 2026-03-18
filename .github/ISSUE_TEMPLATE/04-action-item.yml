@@ -1,0 +1,54 @@
+name: Action item
+description: Track a concrete task from meetings or discussions.
+title: "[Action Item] "
+labels:
+  - action-item
+body:
+  - type: textarea
+    id: task
+    attributes:
+      label: Task details
+      description: Define the work item and expected outcome.
+    validations:
+      required: true
+  - type: input
+    id: owner
+    attributes:
+      label: Owner
+      description: GitHub handle or team responsible.
+      placeholder: @username or team name
+    validations:
+      required: true
+  - type: input
+    id: due_date
+    attributes:
+      label: Target due date
+      placeholder: YYYY-MM-DD
+  - type: dropdown
+    id: status
+    attributes:
+      label: Initial status
+      options:
+        - Not started
+        - In progress
+        - Blocked
+        - Done
+    validations:
+      required: true
+  - type: dropdown
+    id: impacted_groups
+    attributes:
+      label: Related groups
+      multiple: true
+      options:
+        - None
+        - Admin
+        - Address
+        - Base
+        - Buildings
+        - Data Platform
+        - Developer Advocacy
+        - Places
+        - Schema
+        - Transportation
+        - Other

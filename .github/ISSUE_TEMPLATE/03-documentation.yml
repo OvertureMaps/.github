@@ -1,0 +1,23 @@
+name: Documentation
+description: Request new docs or updates to existing docs.
+title: "[Docs] "
+labels:
+  - documentation
+body:
+  - type: textarea
+    id: request
+    attributes:
+      label: Documentation request
+      description: What should be documented or corrected?
+    validations:
+      required: true
+  - type: textarea
+    id: audience
+    attributes:
+      label: Audience and use case
+      description: Who needs this and what task should it unblock?
+  - type: textarea
+    id: references
+    attributes:
+      label: Related links
+      description: Existing pages, issues, PRs, or examples.
