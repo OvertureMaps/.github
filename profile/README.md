@@ -1,6 +1,6 @@
 ## Welcome to the Overture Maps Foundation 🌍
 
-<p align="center"><img src="./overture_maps_foundation_banner.png" width="450" /></p>
+<p align="center"><img src="./overture_maps_foundation_banner.png" width="450" alt="Overture Maps Foundation banner" /></p>
 
 The [Overture Maps Foundation](https://overturemaps.org) is a Linux Foundation initiative producing free, open, and interoperable map data for developers and organizations worldwide. Our datasets cover the core [themes](https://docs.overturemaps.org/schema/) of the physical world: addresses, buildings, divisions, places, transportation, and base features, released as cloud-native GeoParquet files, versioned and ready to build on.
 
