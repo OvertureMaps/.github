@@ -22,14 +22,18 @@ The [Overture Maps Foundation](https://overturemaps.org) is a Linux Foundation i
 | [osm-pbf-parquet](https://github.com/OvertureMaps/osm-pbf-parquet) | Transcode OSM PBF files to hive-partitioned Parquet |
 | [transportation-splitter](https://github.com/OvertureMaps/transportation-splitter) | PySpark tool for splitting Overture transportation segments |
 | [transportation-routing](https://github.com/OvertureMaps/transportation-routing) | Tools and documentation for routing with Overture transportation data |
+| [terraform-aws-overture-tiles](https://github.com/OvertureMaps/terraform-aws-overture-tiles) | Terraform/Tofu module for generating PMTiles of Overture data on AWS |
 
 ## 📚 Learning & Community
 
 | Repository | Description |
 | :--- | :--- |
 | [workshop](https://github.com/OvertureMaps/workshop) | Demos and workshop notebooks for working with Overture data and GERS |
+| [awesome-gers](https://github.com/OvertureMaps/awesome-gers) | A curated list of projects, tools, and resources built with GERS |
 | [workflows](https://github.com/OvertureMaps/workflows) | Reusable GitHub Actions workflows for the OvertureMaps organization |
 
 ---
+
+Exploring experimental projects and apps? Check out [labs.overturemaps.org](https://labs.overturemaps.org) for our Labs initiatives.
 
 Questions or ideas? Open an issue in the relevant repository, or visit [overturemaps.org](https://overturemaps.org) to learn more. 💙
