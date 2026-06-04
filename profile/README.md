@@ -23,6 +23,7 @@ The [Overture Maps Foundation](https://overturemaps.org) is a Linux Foundation i
 | [transportation-splitter](https://github.com/OvertureMaps/transportation-splitter) | PySpark tool for splitting Overture transportation segments |
 | [transportation-routing](https://github.com/OvertureMaps/transportation-routing) | Tools and documentation for routing with Overture transportation data |
 | [terraform-aws-overture-tiles](https://github.com/OvertureMaps/terraform-aws-overture-tiles) | Terraform/Tofu module for generating PMTiles of Overture data on AWS |
+| [stac-check-action](https://github.com/OvertureMaps/stac-check-action) | Unofficial GitHub Action to run [stac-check](https://github.com/stac-utils/stac-check) for linting and best practices |
 
 ## 📚 Learning & Community
 
