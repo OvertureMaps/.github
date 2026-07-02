@@ -43,14 +43,13 @@ Use `[WIP]` as a prefix on repos without draft PR support.
 
 | Type | Use for |
 |---|---|
-| `fix` | Fixing a defect |
+| `fix` | Fixing a defect (including security fixes, e.g. `fix(security): sanitize user input`) |
 | `feat` | Adding new functionality or improving existing functionality |
 | `docs` | Documentation-only changes |
 | `refactor` | Code restructuring without behavior change |
 | `test` | Adding or updating tests |
 | `chore` | Maintenance, dependency updates, tooling |
 | `perf` | Performance improvements |
-| `security` | Security fixes or hardening |
 
 ### Staleness thresholds
 
