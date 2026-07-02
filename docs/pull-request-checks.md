@@ -12,7 +12,7 @@ In addition to the workflow checks below, all PRs also require a passing [DCO ch
 
 ### Fix a failing PR title check
 
-Edit the PR title to match `[TYPE] Description`. The comment posted on the PR clears automatically once the title passes.
+Edit the PR title to match `type: description` (see [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)). The comment posted on the PR clears automatically once the title passes.
 
 To skip the check for automated or exceptional PRs, add a `bot` or `ignore-semantic-pull-request` label.
 
@@ -32,27 +32,26 @@ Leave a comment, push a commit, or remove the `stale` label. Any of these reset 
 ### PR title format
 
 ```text
-[TYPE] Short description of the change
-[TYPE](scope) Short description of the change
-[BREAKING][TYPE] Short description of the change
+type: Short description of the change
+type(scope): Short description of the change
+type(scope)!: Short description of the change
 ```
 
-The optional `(scope)` narrows the area of the codebase affected (e.g. `[REFACTOR](schema) Consolidate validation logic`).
+PR titles follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) syntax. The optional `(scope)` narrows the area of the codebase affected (e.g. `refactor(schema): consolidate validation logic`). A `!` before the colon marks a breaking change (e.g. `feat(api)!: remove deprecated endpoint`).
 
 Use `[WIP]` as a prefix on repos without draft PR support.
 
 | Type | Use for |
 |---|---|
-| `BUG` | Fixing a defect |
-| `FEATURE` | Adding new functionality |
-| `ENHANCEMENT` | Improving existing functionality |
-| `DOCS` | Documentation-only changes |
-| `REFACTOR` | Code restructuring without behavior change |
-| `TEST` | Adding or updating tests |
-| `CHORE` | Maintenance, dependency updates, tooling |
-| `PERFORMANCE` | Performance improvements |
-| `SECURITY` | Security fixes or hardening |
-| `INVESTIGATION` | Exploratory or spike work |
+| `fix` | Fixing a defect |
+| `feat` | Adding new functionality or improving existing functionality |
+| `docs` | Documentation-only changes |
+| `refactor` | Code restructuring without behavior change |
+| `test` | Adding or updating tests |
+| `chore` | Maintenance, dependency updates, tooling |
+| `perf` | Performance improvements |
+| `security` | Security fixes or hardening |
+| `investigation` | Exploratory or spike work |
 
 ### Staleness thresholds
 
@@ -71,7 +70,7 @@ Overture has contributors across many repos and organizations. Without consisten
 
 ### Why title format matters
 
-A consistent title format makes changelogs, release notes, and search useful without manual categorization. The `[TYPE]` prefix is machine-readable and gives reviewers immediate context when triaging a queue of open PRs.
+A consistent title format makes changelogs, release notes, and search useful without manual categorization. The Conventional Commits `type` prefix is machine-readable and gives reviewers immediate context when triaging a queue of open PRs.
 
 ### Why linked issues are required
 
