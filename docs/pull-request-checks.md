@@ -41,17 +41,15 @@ PR titles follow [Conventional Commits](https://www.conventionalcommits.org/en/v
 
 Use `[WIP]` as a prefix on repos without draft PR support.
 
-| Type | Previous type | Use for |
-|---|---|---|
-| `fix` | `BUG`, `SECURITY` | Fixing a defect (including security fixes, e.g. `fix(security): sanitize user input`) |
-| `feat` | `FEATURE`, `ENHANCEMENT` | Adding new functionality or improving existing functionality |
-| `docs` | `DOCS` | Documentation-only changes |
-| `refactor` | `REFACTOR` | Code restructuring without behavior change |
-| `test` | `TEST` | Adding or updating tests |
-| `chore` | `CHORE` | Maintenance, dependency updates, tooling |
-| `perf` | `PERFORMANCE` | Performance improvements |
-
-> `INVESTIGATION` has been retired; exploratory/spike work shouldn't typically result in PRs.
+| Type | Use for |
+|---|---|
+| `fix` | Fixing a defect (including security fixes, e.g. `fix(security): sanitize user input`) |
+| `feat` | Adding new functionality or improving existing functionality |
+| `docs` | Documentation-only changes |
+| `refactor` | Code restructuring without behavior change |
+| `test` | Adding or updating tests |
+| `chore` | Maintenance, dependency updates, tooling |
+| `perf` | Performance improvements |
 
 ### Staleness thresholds
 
