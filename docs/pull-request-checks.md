@@ -51,7 +51,6 @@ Use `[WIP]` as a prefix on repos without draft PR support.
 | `chore` | Maintenance, dependency updates, tooling |
 | `perf` | Performance improvements |
 | `security` | Security fixes or hardening |
-| `investigation` | Exploratory or spike work |
 
 ### Staleness thresholds
 
