@@ -12,7 +12,7 @@ In addition to the workflow checks below, all PRs also require a passing [DCO ch
 
 ### Fix a failing PR title check
 
-Edit the PR title to match one of the formats in [PR title format](#pr-title-format) below. If your repo has opted into `strict-cc` mode, only standard Conventional Commits (`type: description`) is accepted. The comment posted on the PR clears automatically once the title passes.
+Edit the PR title to match one of the formats in [PR title format](#pr-title-format) below. If your repo requires the strict Conventional Commits check (a separate workflow from the default), only `type: description` is accepted. The comment posted on the PR clears automatically once the title passes.
 
 To skip the check for automated or exceptional PRs, add a `bot` or `ignore-semantic-pull-request` label.
 
@@ -57,7 +57,7 @@ Use `[WIP]` as a prefix on repos without draft PR support.
 
 `INVESTIGATION` has no Conventional Commits equivalent and isn't accepted — exploratory or spike work shouldn't typically result in PRs.
 
-By default, a repo accepts every row above: both syntaxes and both the Conventional Commits and legacy type words. Repos can instead opt into **`strict-cc` mode**, which drops everything except the Conventional Commits column and the `type:` syntax. Enabling it is a per-repo decision made whenever that repo is ready to fully migrate — see the [maintainer guide](https://github.com/OvertureMaps/operating-procedures/blob/main/development/pr-checks-maintainer.md) for how to set it.
+By default, a repo accepts every row above: both syntaxes and both the Conventional Commits and legacy type words. This check runs as an org-required workflow, so a per-repo input toggle isn't an option — instead, a separate strict Conventional Commits workflow is offered alongside the default one, accepting only the Conventional Commits column and the `type:` syntax. A repo's maintainers switch which workflow they require whenever that repo is ready to fully migrate — see the [maintainer guide](https://github.com/OvertureMaps/operating-procedures/blob/main/development/pr-checks-maintainer.md) for how to set it.
 
 ### Staleness thresholds
 
@@ -76,7 +76,7 @@ Overture has contributors across many repos and organizations. Without consisten
 
 ### Why title format matters
 
-A consistent title format makes changelogs, release notes, and search useful without manual categorization. The `type` prefix is machine-readable and gives reviewers immediate context when triaging a queue of open PRs. `strict-cc` is opt-in rather than a scheduled cutover because repos across Overture adopt conventions at different paces — a central deadline would force some to scramble. Bracket syntax stays supported indefinitely by default since it costs nothing to keep; legacy type words remain valid until a repo's maintainers opt into `strict-cc`.
+A consistent title format makes changelogs, release notes, and search useful without manual categorization. The `type` prefix is machine-readable and gives reviewers immediate context when triaging a queue of open PRs. Since this check runs as an org-required workflow with no per-repo input to flip, offering a discrete strict Conventional Commits workflow alongside the default lets each repo's maintainers switch which one they require whenever their contributors are ready, rather than forcing every repo onto one org-wide deadline. Bracket syntax and legacy type words stay supported indefinitely under the default workflow.
 
 ### Why linked issues are required
 
