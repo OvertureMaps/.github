@@ -12,7 +12,7 @@ In addition to the workflow checks below, all PRs also require a passing [DCO ch
 
 ### Fix a failing PR title check
 
-Edit the PR title to match `[TYPE] Description`. The comment posted on the PR clears automatically once the title passes.
+Edit the PR title to match one of the formats in [PR title format](#pr-title-format) below. If your repo requires **Overture PR Checks (v2)**, only `type: description` is accepted; if it requires the original **Overture PR Checks**, all formats below are accepted. The comment posted on the PR clears automatically once the title passes.
 
 To skip the check for automated or exceptional PRs, add a `bot` or `ignore-semantic-pull-request` label.
 
@@ -32,27 +32,37 @@ Leave a comment, push a commit, or remove the `stale` label. Any of these reset 
 ### PR title format
 
 ```text
+type: Short description of the change
+type(scope): Short description of the change
+type(scope)!: Short description of the change
+
 [TYPE] Short description of the change
 [TYPE](scope) Short description of the change
 [BREAKING][TYPE] Short description of the change
 ```
 
-The optional `(scope)` narrows the area of the codebase affected (e.g. `[REFACTOR](schema) Consolidate validation logic`).
+The optional `(scope)` narrows the area of the codebase affected (e.g. `refactor(schema): consolidate validation logic`). A `!` before the colon (or a `[BREAKING]` prefix) marks a breaking change (e.g. `feat(api)!: remove deprecated endpoint`).
 
 Use `[WIP]` as a prefix on repos without draft PR support.
 
-| Type | Use for |
-|---|---|
-| `BUG` | Fixing a defect |
-| `FEATURE` | Adding new functionality |
-| `ENHANCEMENT` | Improving existing functionality |
-| `DOCS` | Documentation-only changes |
-| `REFACTOR` | Code restructuring without behavior change |
-| `TEST` | Adding or updating tests |
-| `CHORE` | Maintenance, dependency updates, tooling |
-| `PERFORMANCE` | Performance improvements |
-| `SECURITY` | Security fixes or hardening |
-| `INVESTIGATION` | Exploratory or spike work |
+| Conventional Commits type | Legacy equivalent | Use for |
+|---|---|---|
+| `fix` | `BUG`, `SECURITY` | Fixing a defect (including security fixes, e.g. `fix(security): sanitize user input`) |
+| `feat` | `FEATURE`, `ENHANCEMENT` | Adding new functionality or improving existing functionality |
+| `docs` | `DOCS` | Documentation-only changes |
+| `refactor` | `REFACTOR` | Code restructuring without behavior change |
+| `test` | `TEST` | Adding or updating tests |
+| `chore` | `CHORE` | Maintenance, dependency updates, tooling |
+| `perf` | `PERFORMANCE` | Performance improvements |
+
+`INVESTIGATION` has no Conventional Commits equivalent and isn't accepted by either workflow — exploratory or spike work shouldn't typically result in PRs.
+
+Overture offers two reusable PR title workflows a repo can require:
+
+- **Overture PR Checks** (original) — accepts every row above: both syntaxes and both the Conventional Commits and legacy type words.
+- **Overture PR Checks (v2)** — accepts only the Conventional Commits column and the `type:` syntax.
+
+Since this check runs as an org-required workflow, individual repos have no toggleable input to control it — the mechanism is choosing which named workflow to require. A repo's maintainers switch from **Overture PR Checks** to **Overture PR Checks (v2)** whenever that repo is ready to fully migrate — see the [maintainer guide](https://github.com/OvertureMaps/operating-procedures/blob/main/development/pr-checks-maintainer.md) for how to set it.
 
 ### Staleness thresholds
 
@@ -71,7 +81,7 @@ Overture has contributors across many repos and organizations. Without consisten
 
 ### Why title format matters
 
-A consistent title format makes changelogs, release notes, and search useful without manual categorization. The `[TYPE]` prefix is machine-readable and gives reviewers immediate context when triaging a queue of open PRs.
+A consistent title format makes changelogs, release notes, and search useful without manual categorization. The `type` prefix is machine-readable and gives reviewers immediate context when triaging a queue of open PRs. Since this check runs as an org-required workflow with no per-repo input to flip, offering **Overture PR Checks (v2)** as a discrete workflow (which also accomplishes other, unrelated improvements) alongside the original **Overture PR Checks** lets each repo's maintainers switch whenever their contributors are ready, rather than forcing every repo onto one org-wide deadline. Bracket syntax and legacy type words stay supported indefinitely under the original Overture PR Checks.
 
 ### Why linked issues are required
 
