@@ -12,7 +12,7 @@ In addition to the workflow checks below, all PRs also require a passing [DCO ch
 
 ### Fix a failing PR title check
 
-Edit the PR title to match `type: description` or the legacy `[TYPE] description` syntax (see [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)) — both syntaxes are accepted indefinitely. `type`/`TYPE` may be either the new Conventional Commits word or its legacy equivalent (e.g. `fix: description`, `[BUG] description`); legacy words are accepted during the transition period. The comment posted on the PR clears automatically once the title passes.
+Edit the PR title to match `type: description` or the legacy `[TYPE] description` syntax (see [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)). `type`/`TYPE` may be either a Conventional Commits word or its legacy equivalent (e.g. `fix: description`, `[BUG] description`). If your repo has opted into `strict-cc` mode (see below), only standard Conventional Commits syntax and types are accepted. The comment posted on the PR clears automatically once the title passes.
 
 To skip the check for automated or exceptional PRs, add a `bot` or `ignore-semantic-pull-request` label.
 
@@ -31,6 +31,10 @@ Leave a comment, push a commit, or remove the `stale` label. Any of these reset 
 
 ### PR title format
 
+By default, a repo accepts both syntaxes and both type vocabularies below (the permissive default). Repos can instead opt into `strict-cc` mode, which enforces standard [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) only: `type:` syntax and Conventional Commits type words exclusively — no bracket syntax, no legacy words. Enabling `strict-cc` is a per-repo, consumer-driven decision made whenever that repo is ready to fully migrate; see the [maintainer guide](https://github.com/OvertureMaps/operating-procedures/blob/main/development/pr-checks-maintainer.md) for how to set it.
+
+**Default (permissive)**
+
 ```text
 type: Short description of the change
 type(scope): Short description of the change
@@ -41,13 +45,23 @@ type(scope)!: Short description of the change
 [BREAKING][TYPE] Short description of the change
 ```
 
-Both syntaxes are accepted indefinitely — the bracket syntax is not being retired, only the legacy type vocabulary below is. The optional `(scope)` narrows the area of the codebase affected (e.g. `refactor(schema): consolidate validation logic`). A `!` before the colon (or `[BREAKING]` prefix) marks a breaking change (e.g. `feat(api)!: remove deprecated endpoint`).
+The optional `(scope)` narrows the area of the codebase affected (e.g. `refactor(schema): consolidate validation logic`). A `!` before the colon (or `[BREAKING]` prefix) marks a breaking change (e.g. `feat(api)!: remove deprecated endpoint`).
 
 Use `[WIP]` as a prefix on repos without draft PR support.
 
-The type vocabulary itself is transitioning in two phases. New PRs should use the Conventional Commits words; the legacy words below remain accepted for a period (tracked in [OvertureMaps/operating-procedures#95](https://github.com/OvertureMaps/operating-procedures/issues/95)) before they're retired and only Conventional Commits words are accepted.
+**`strict-cc` mode**
 
-| Conventional Commits (preferred) | Legacy (accepted, deprecated) | Use for |
+```text
+type: Short description of the change
+type(scope): Short description of the change
+type(scope)!: Short description of the change
+```
+
+Only the Conventional Commits type words in the table below are valid — bracket syntax and legacy words are rejected.
+
+The type vocabulary maps as follows:
+
+| Conventional Commits (`strict-cc` and default) | Legacy (default only) | Use for |
 |---|---|---|
 | `fix` | `BUG`, `SECURITY` | Fixing a defect (including security fixes, e.g. `fix(security): sanitize user input`) |
 | `feat` | `FEATURE`, `ENHANCEMENT` | Adding new functionality or improving existing functionality |
@@ -57,7 +71,7 @@ The type vocabulary itself is transitioning in two phases. New PRs should use th
 | `chore` | `CHORE` | Maintenance, dependency updates, tooling |
 | `perf` | `PERFORMANCE` | Performance improvements |
 
-`INVESTIGATION` has no Conventional Commits equivalent and is retired outright — exploratory or spike work shouldn't typically result in PRs.
+`INVESTIGATION` has no Conventional Commits equivalent and is not accepted in either mode — exploratory or spike work shouldn't typically result in PRs.
 
 ### Staleness thresholds
 
@@ -78,9 +92,9 @@ Overture has contributors across many repos and organizations. Without consisten
 
 A consistent title format makes changelogs, release notes, and search useful without manual categorization. The `type` prefix is machine-readable and gives reviewers immediate context when triaging a queue of open PRs.
 
-### Why the type vocabulary is phased in (but not the syntax)
+### Why `strict-cc` is opt-in rather than a scheduled cutover
 
-Retiring the legacy type words the moment the new vocabulary lands would break muscle memory and in-flight PRs across every OvertureMaps repo at once. Accepting both vocabularies for a period lets contributors adopt the Conventional Commits words at their own pace before the legacy words are retired and the check enforces the new vocabulary only. The `[TYPE]` bracket syntax, by contrast, is cosmetic and costs nothing to keep supporting alongside `type:` — there's no plan to retire it.
+Repos across Overture adopt conventions at different paces, and a single org-wide retirement date for the legacy vocabulary would force repos that aren't ready to either scramble or ignore failing checks. Making full Conventional Commits enforcement an opt-in `strict-cc` toggle lets each repo's maintainers switch over when their own contributors are ready, without a central deadline. The default stays permissive — bracket syntax stays supported indefinitely since it costs nothing to keep, and legacy type words remain valid until a repo opts in.
 
 ### Why linked issues are required
 
