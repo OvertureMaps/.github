@@ -12,7 +12,7 @@ In addition to the workflow checks below, all PRs also require a passing [DCO ch
 
 ### Fix a failing PR title check
 
-Edit the PR title to match either the legacy `[TYPE] Description` format or the new `type: description` [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) format below. Both are accepted during the transition period. The comment posted on the PR clears automatically once the title passes.
+Edit the PR title to match `type: description` (see [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)). The comment posted on the PR clears automatically once the title passes.
 
 To skip the check for automated or exceptional PRs, add a `bot` or `ignore-semantic-pull-request` label.
 
@@ -31,10 +31,6 @@ Leave a comment, push a commit, or remove the `stale` label. Any of these reset 
 
 ### PR title format
 
-Two formats are accepted during the transition period. New PRs should use the Conventional Commits format; the legacy bracket format continues to work until it is retired in a future phase (tracked in [OvertureMaps/operating-procedures#95](https://github.com/OvertureMaps/operating-procedures/issues/95)).
-
-**Conventional Commits (preferred)**
-
 ```text
 type: Short description of the change
 type(scope): Short description of the change
@@ -43,28 +39,17 @@ type(scope)!: Short description of the change
 
 PR titles follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) syntax. The optional `(scope)` narrows the area of the codebase affected (e.g. `refactor(schema): consolidate validation logic`). A `!` before the colon marks a breaking change (e.g. `feat(api)!: remove deprecated endpoint`).
 
-**Legacy bracket format (deprecated, still accepted)**
-
-```text
-[TYPE] Short description of the change
-[TYPE](scope) Short description of the change
-[BREAKING][TYPE] Short description of the change
-```
-
 Use `[WIP]` as a prefix on repos without draft PR support.
 
-| Legacy type | Conventional Commits type | Use for |
-|---|---|---|
-| `BUG` | `fix` | Fixing a defect (including security fixes, e.g. `fix(security): sanitize user input`) |
-| `SECURITY` | `fix` | Security fixes or hardening — use the `(security)` scope, e.g. `fix(security): ...` |
-| `FEATURE` | `feat` | Adding new functionality |
-| `ENHANCEMENT` | `feat` | Improving existing functionality |
-| `DOCS` | `docs` | Documentation-only changes |
-| `REFACTOR` | `refactor` | Code restructuring without behavior change |
-| `TEST` | `test` | Adding or updating tests |
-| `CHORE` | `chore` | Maintenance, dependency updates, tooling |
-| `PERFORMANCE` | `perf` | Performance improvements |
-| `INVESTIGATION` | *(retired)* | Exploratory or spike work shouldn't typically result in PRs |
+| Type | Use for |
+|---|---|
+| `fix` | Fixing a defect (including security fixes, e.g. `fix(security): sanitize user input`) |
+| `feat` | Adding new functionality or improving existing functionality |
+| `docs` | Documentation-only changes |
+| `refactor` | Code restructuring without behavior change |
+| `test` | Adding or updating tests |
+| `chore` | Maintenance, dependency updates, tooling |
+| `perf` | Performance improvements |
 
 ### Staleness thresholds
 
@@ -84,10 +69,6 @@ Overture has contributors across many repos and organizations. Without consisten
 ### Why title format matters
 
 A consistent title format makes changelogs, release notes, and search useful without manual categorization. The Conventional Commits `type` prefix is machine-readable and gives reviewers immediate context when triaging a queue of open PRs.
-
-### Why the transition is phased
-
-Flipping the check to reject the legacy bracket format immediately would break in-flight PRs and muscle memory across every OvertureMaps repo at once. Accepting both formats for a period lets contributors adopt Conventional Commits at their own pace before the legacy format is retired and the check enforces Conventional Commits only.
 
 ### Why linked issues are required
 
