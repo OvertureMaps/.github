@@ -12,7 +12,7 @@ In addition to the workflow checks below, all PRs also require a passing [DCO ch
 
 ### Fix a failing PR title check
 
-Edit the PR title to match one of the formats in [PR title format](#pr-title-format) below. If your repo requires **OMF PR Checks (cc)**, only `type: description` is accepted; if it requires **Normal OMF PR Checks**, all formats below are accepted. The comment posted on the PR clears automatically once the title passes.
+Edit the PR title to match one of the formats in [PR title format](#pr-title-format) below. If your repo requires **Overture PR Checks (v2)**, only `type: description` is accepted; if it requires the original **Overture PR Checks**, all formats below are accepted. The comment posted on the PR clears automatically once the title passes.
 
 To skip the check for automated or exceptional PRs, add a `bot` or `ignore-semantic-pull-request` label.
 
@@ -59,10 +59,10 @@ Use `[WIP]` as a prefix on repos without draft PR support.
 
 Overture offers two reusable PR title workflows a repo can require:
 
-- **Normal OMF PR Checks** — accepts every row above: both syntaxes and both the Conventional Commits and legacy type words.
-- **OMF PR Checks (cc)** — accepts only the Conventional Commits column and the `type:` syntax.
+- **Overture PR Checks** (original) — accepts every row above: both syntaxes and both the Conventional Commits and legacy type words.
+- **Overture PR Checks (v2)** — accepts only the Conventional Commits column and the `type:` syntax.
 
-Since this check runs as an org-required workflow, individual repos have no toggleable input to control it — the mechanism is choosing which named workflow to require. A repo's maintainers switch from **Normal OMF PR Checks** to **OMF PR Checks (cc)** whenever that repo is ready to fully migrate — see the [maintainer guide](https://github.com/OvertureMaps/operating-procedures/blob/main/development/pr-checks-maintainer.md) for how to set it.
+Since this check runs as an org-required workflow, individual repos have no toggleable input to control it — the mechanism is choosing which named workflow to require. A repo's maintainers switch from **Overture PR Checks** to **Overture PR Checks (v2)** whenever that repo is ready to fully migrate — see the [maintainer guide](https://github.com/OvertureMaps/operating-procedures/blob/main/development/pr-checks-maintainer.md) for how to set it.
 
 ### Staleness thresholds
 
@@ -81,7 +81,7 @@ Overture has contributors across many repos and organizations. Without consisten
 
 ### Why title format matters
 
-A consistent title format makes changelogs, release notes, and search useful without manual categorization. The `type` prefix is machine-readable and gives reviewers immediate context when triaging a queue of open PRs. Since this check runs as an org-required workflow with no per-repo input to flip, offering **OMF PR Checks (cc)** as a discrete workflow alongside **Normal OMF PR Checks** lets each repo's maintainers switch whenever their contributors are ready, rather than forcing every repo onto one org-wide deadline. Bracket syntax and legacy type words stay supported indefinitely under Normal OMF PR Checks.
+A consistent title format makes changelogs, release notes, and search useful without manual categorization. The `type` prefix is machine-readable and gives reviewers immediate context when triaging a queue of open PRs. Since this check runs as an org-required workflow with no per-repo input to flip, offering **Overture PR Checks (v2)** as a discrete workflow (which also accomplishes other, unrelated improvements) alongside the original **Overture PR Checks** lets each repo's maintainers switch whenever their contributors are ready, rather than forcing every repo onto one org-wide deadline. Bracket syntax and legacy type words stay supported indefinitely under the original Overture PR Checks.
 
 ### Why linked issues are required
 
