@@ -12,7 +12,7 @@ In addition to the workflow checks below, all PRs also require a passing [DCO ch
 
 ### Fix a failing PR title check
 
-Edit the PR title to match `type: description` (see [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)). The comment posted on the PR clears automatically once the title passes.
+Edit the PR title to match `type: description` or the legacy `[TYPE] description` syntax (see [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)) — both syntaxes are accepted indefinitely. `type`/`TYPE` may be either the new Conventional Commits word or its legacy equivalent (e.g. `fix: description`, `[BUG] description`); legacy words are accepted during the transition period. The comment posted on the PR clears automatically once the title passes.
 
 To skip the check for automated or exceptional PRs, add a `bot` or `ignore-semantic-pull-request` label.
 
@@ -35,21 +35,29 @@ Leave a comment, push a commit, or remove the `stale` label. Any of these reset 
 type: Short description of the change
 type(scope): Short description of the change
 type(scope)!: Short description of the change
+
+[TYPE] Short description of the change
+[TYPE](scope) Short description of the change
+[BREAKING][TYPE] Short description of the change
 ```
 
-PR titles follow [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) syntax. The optional `(scope)` narrows the area of the codebase affected (e.g. `refactor(schema): consolidate validation logic`). A `!` before the colon marks a breaking change (e.g. `feat(api)!: remove deprecated endpoint`).
+Both syntaxes are accepted indefinitely — the bracket syntax is not being retired, only the legacy type vocabulary below is. The optional `(scope)` narrows the area of the codebase affected (e.g. `refactor(schema): consolidate validation logic`). A `!` before the colon (or `[BREAKING]` prefix) marks a breaking change (e.g. `feat(api)!: remove deprecated endpoint`).
 
 Use `[WIP]` as a prefix on repos without draft PR support.
 
-| Type | Use for |
-|---|---|
-| `fix` | Fixing a defect (including security fixes, e.g. `fix(security): sanitize user input`) |
-| `feat` | Adding new functionality or improving existing functionality |
-| `docs` | Documentation-only changes |
-| `refactor` | Code restructuring without behavior change |
-| `test` | Adding or updating tests |
-| `chore` | Maintenance, dependency updates, tooling |
-| `perf` | Performance improvements |
+The type vocabulary itself is transitioning in two phases. New PRs should use the Conventional Commits words; the legacy words below remain accepted for a period (tracked in [OvertureMaps/operating-procedures#95](https://github.com/OvertureMaps/operating-procedures/issues/95)) before they're retired and only Conventional Commits words are accepted.
+
+| Conventional Commits (preferred) | Legacy (accepted, deprecated) | Use for |
+|---|---|---|
+| `fix` | `BUG`, `SECURITY` | Fixing a defect (including security fixes, e.g. `fix(security): sanitize user input`) |
+| `feat` | `FEATURE`, `ENHANCEMENT` | Adding new functionality or improving existing functionality |
+| `docs` | `DOCS` | Documentation-only changes |
+| `refactor` | `REFACTOR` | Code restructuring without behavior change |
+| `test` | `TEST` | Adding or updating tests |
+| `chore` | `CHORE` | Maintenance, dependency updates, tooling |
+| `perf` | `PERFORMANCE` | Performance improvements |
+
+`INVESTIGATION` has no Conventional Commits equivalent and is retired outright — exploratory or spike work shouldn't typically result in PRs.
 
 ### Staleness thresholds
 
@@ -68,7 +76,11 @@ Overture has contributors across many repos and organizations. Without consisten
 
 ### Why title format matters
 
-A consistent title format makes changelogs, release notes, and search useful without manual categorization. The Conventional Commits `type` prefix is machine-readable and gives reviewers immediate context when triaging a queue of open PRs.
+A consistent title format makes changelogs, release notes, and search useful without manual categorization. The `type` prefix is machine-readable and gives reviewers immediate context when triaging a queue of open PRs.
+
+### Why the type vocabulary is phased in (but not the syntax)
+
+Retiring the legacy type words the moment the new vocabulary lands would break muscle memory and in-flight PRs across every OvertureMaps repo at once. Accepting both vocabularies for a period lets contributors adopt the Conventional Commits words at their own pace before the legacy words are retired and the check enforces the new vocabulary only. The `[TYPE]` bracket syntax, by contrast, is cosmetic and costs nothing to keep supporting alongside `type:` — there's no plan to retire it.
 
 ### Why linked issues are required
 
