@@ -12,6 +12,7 @@ The [Overture Maps Foundation](https://overturemaps.org) is a Linux Foundation i
 | [schema](https://github.com/OvertureMaps/schema) | The canonical Overture schema specification |
 | [docs](https://github.com/OvertureMaps/docs) | Documentation site, published at [docs.overturemaps.org](https://docs.overturemaps.org) |
 | [stac](https://github.com/OvertureMaps/stac) | Creates manifest files for cataloguing Overture releases, published at [stac.overturemaps.org](https://stac.overturemaps.org) |
+| [overture-providers](https://github.com/OvertureMaps/overture-providers) | Public provider registry and dataset configs for Overture data sources |
 
 ## 🛠️ Developer Tools
 
@@ -27,6 +28,7 @@ The [Overture Maps Foundation](https://overturemaps.org) is a Linux Foundation i
 | [stac-check-action](https://github.com/OvertureMaps/stac-check-action) | Unofficial GitHub Action to run [stac-check](https://github.com/stac-utils/stac-check) for linting and best practices |
 | [overture-core](https://github.com/OvertureMaps/overture-core) | Shared SDK: bundle and provenance model, config, check framework, platform abstractions, and registry client |
 | [overture-airflow-provider](https://github.com/OvertureMaps/overture-airflow-provider) | Apache Airflow provider for the services Overture uses |
+| [matchers](https://github.com/OvertureMaps/matchers) | Python matchers used by OMF to conflate data |
 
 ## 📚 Learning & Community
 
